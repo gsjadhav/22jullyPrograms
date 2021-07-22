@@ -1,0 +1,34 @@
+// Login form
+import React, { useState } from 'react';
+   const App=()=>
+   {
+     const [fname,setfname]= useState("");
+     const [lname,setlname]= useState("");
+
+     const inputEvent1=(event)=>
+     {
+      setfname(event.target.value);
+     }
+     const inputEvent2=(event)=>
+     {
+      setlname(event.target.value);
+     }
+     const [firstname,setFirstname]= useState("");
+     const [Lastname,setLastname]= useState("");
+       const onSubmits=(event)=> {
+           event.preventDefault();
+          setFirstname(fname);
+          setLastname(lname);
+        }
+     return(<> 
+         <form onSubmit={onSubmits}>
+         <div>
+       <h1>Hello {firstname}{Lastname}</h1>
+       <input type="text" placeholder="Enter First Name" onChange={inputEvent1} />
+       <input type="text" placeholder="Enter Last Name" onChange={inputEvent2} />
+       <input type ="Submit" />
+       </div>
+         </form>
+     </>);
+   };
+   export default App;
